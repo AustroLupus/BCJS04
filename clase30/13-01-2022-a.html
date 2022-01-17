@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        nombre: <input name="nom" type="text" id="nom"><br>
+        apellido: <input name="ape" type="text" id="ape"><br>
+        <button onclick="enviar();">enviar</button><br>
+        <button onclick="cargar();">Cargar</button><br>
+    </p>
+    <script type="text/javascript">
+        function enviar(){
+            let no=document.getElementById('nom').value;
+            let ap=document.getElementById('ape').value;
+            const myobj={nombre:no,apellido:ap};
+            const myjson=JSON.stringify(myobj);
+            //window.location="ejemploJson_in.php?x="+myjson;
+        }
+        function cargar(){
+            fetch("ejemploJson_out.php")
+            .then((respuesta)=>{
+                return respuesta.json();
+            })
+            .then((respuesta)=>{
+                document.getElementById('nom').value=respuesta.nom;
+                document.getElementById('ape').value=respuesta.ape;
+            });
+        }
+
+    </script>
+</body>
+</html>

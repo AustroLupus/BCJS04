@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma con webservice</title>
+</head>
+<body>
+    <h3>sumar con webservice</h3>
+    v1: <input type="text" name="v1" id="v1"><br>
+    v2: <input type="text" name="v2" id="v2"><br>
+    <button onclick="enviar();">enviar</button><br>
+    respuesta: <input type="text" name="res" id="res"><br>
+    <script type="text/javascript">
+        function enviar(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            const myobj={vv1:v1,vv2:v2};
+            const myjson=JSON.stringify(myobj);
+            let url="ejemploJson_suma.php?x="+myjson;
+            const req=new XMLHttpRequest();
+            req.open("GET",url,true);
+            req.onreadystatechange=function(aEvt){
+                if(req.readyState==4 && req.status==200){
+                    let resultado=JSON.parse(this.responseText);
+                    document.getElementById('res').value=resultado.suma;
+                }
+            }
+            req.send(null);
+        }
+    </script>
+</body>
+</html>
