@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos</title>
+</head>
+<body>
+    <input type="button" value="hacer click aqui" name="b1" id="b1">
+    <input type="button" value="desactivar alerta" name="b2" id="b2" onclick="desactiva();"><br><br>
+    <p>este es un texto <span id="prueba">prueba</span> para ver que pasa</p>
+    <script type="text/javascript">
+        function holamundo(){
+            alert("Hola mundo");
+        }
+        let boton=document.getElementById('b1')
+        boton.addEventListener('click',holamundo,false);
+        function desactiva(){
+        boton.removeEventListener('click',holamundo,false);
+        }
+        document.getElementById('prueba').addEventListener('click',holamundo,false);
+    </script>
+</body>
+</html>

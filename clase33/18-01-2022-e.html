@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dom crear</title>
+</head>
+<body>
+	<button onclick="crear();">crear1</button><br>
+	ingrese id: <input type="text" name="ida" id="ida"><br>
+	<button onclick="eliminar();">eliminar</button>
+	
+	<script type="text/javascript">
+		let id=1;
+		function eliminar(){
+			let ide=document.getElementById("ida").value;
+			let elemento=document.getElementById(ide);
+			document.body.removeChild(elemento);
+		}
+		function crear(){
+			let elemento=document.createElement("p");
+			elemento.setAttribute("id",id);
+			let cont=document.createTextNode("Hola Mundo "+id); 
+			id++;
+			elemento.appendChild(cont);
+			document.body.appendChild(elemento);
+		}
+	</script>
+</body>
+</html>

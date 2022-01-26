@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+    <div class="container-fluid">
+        Nombre: <input class="form-control" type="text" name="nom" id="nom"> <span id="nomSpan"></span> <br>
+        Productor: <input class="form-control" type="text" id="prod" name="prod"><span id="prodSpan"></span><br>
+        Valor Unitario: <input class="form-control" type="text" id="vun" name="vun"><span id="vunSpan"></span><br>
+        <label for="tipoSolicitd">Tipo de display: </label>
+        <select class="form-select" name="tipoSolicitud" id="tipodisplay">
+            <option value="blister">Blister</option>
+            <option value="bolsa">Bolsa</option>
+            <option value="caja">Caja</option>
+            <option value="saco">Saco</option>
+        </select>
+        <br>
+        Cantidad: <input class="form-control" type="text" id="cant" name="cant"><span id="cantSpan"></span><br>
+    </div>
+    <input type="button" class="form-control bg-primary text-white" value="Solicitar" id="solicitarInventario" name="solicitarInventario">
+    <script type="text/javascript">
+        $("#solicitarInventario").click(function(){
+            console.log("boton!");
+            if($("#nom").val().length===0 ||
+            $("#prod").val().length===0 ||
+            $("#vun").val().length===0 ||
+            $("#cant").val().length===0){
+                if($("#nom").val().length===0){
+                    console.log("nombre vacio");
+                    notaVacio("nom");
+                };
+                if($("#prod").val().length===0){
+                    console.log("prod vacio");
+                    notaVacio("prod");
+                };
+                if($("#vun").val().length===0){
+                    console.log("vun vacio");
+                    notaVacio("vun");
+                };
+                if($("#cant").val().length===0){ //verifica que el contenido del input con id "cant" este vacio
+                    console.log("cant vacio"); //un mensaje a mi consola
+                    notaVacio("cant"); // llamado a funcion que da color y pone la nota, toma id como parametro
+                };
+            }else{
+                console.log("todo lleno");
+                alert("Pedido enviado");
+            } 
+        });
+        function notaVacio(etiqueta){ //funcion con parametro
+            let elInput='#'+etiqueta; //le pone # al id
+            let elSpan="#"+etiqueta+"Span"; // convierte id en #idSpan
+            $(elInput).addClass("bg-warning"); //cambia el fondo de el input en naranjo, clase de bootstrap
+            $(elSpan).text(" \u26A0 No puede estar vacio"); // pone el simbolo de advertencia y el texto
+            $(elInput).change(function(){ //queda atento a que cambie, o sea que ya no este vacio
+                $(elInput).removeClass("bg-warning"); //quita el color naranjo
+                $(elSpan).text(""); //remueve el texto del span
+            });
+        };
+        
+    </script>
+<!-- </body>
+</html> -->

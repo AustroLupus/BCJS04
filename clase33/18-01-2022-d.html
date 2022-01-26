@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dom crear</title>
+</head>
+<body>
+	<button onclick="crear();">crear1</button><br>
+	<button onclick="crear2();">crear2</button><br>
+	<p id="e"></p>
+	<script type="text/javascript">
+		let id=1;
+		function crear(){
+			let elemento=document.createElement("p");
+			elemento.setAttribute("id",id);
+			id++;
+			let cont=document.createTextNode("Hola Mundo");
+			elemento.appendChild(cont);
+			document.body.appendChild(elemento);
+		}
+
+		function crear2(){
+			document.getElementById('e').innerHTML="<span>Hola Mundo</span>";
+		}
+	</script>
+</body>
+</html>

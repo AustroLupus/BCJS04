@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    posicion a copiar <input type="text" id="pos" name="pos">
+    <button id="copia">copiar con clone()</button>
+    <ul id="lista">
+        <li id="1">1.paris</li>
+        <li id="2">2.miami</li>
+        <li id="3">3.brucelas</li>
+        <li id="4">4.mexico</li>
+        <li id="5">5.panama</li>
+        <li id="6">6.barcelona</li>
+        <li id="7">7.berlin</li>
+        <li id="8">8.moscu</li>
+        <li id="9">9.londres</li>
+        <li id="10">10.roma</li>
+        <li id="11">11.atenas</li>
+    </ul>
+    <script type="text/javascript">
+        //.empty() y .remove()
+        let orden=11;
+        $("#copia").click(function(){
+            let pos=$("#pos").val();
+            pos="#"+pos;
+            let copia=$(pos).clone(true);
+            let atributo=copia.attr("id");
+            alert("Atributo "+atributo);
+            orden++;
+            copia.attr("id",orden);
+            $("#lista").append(copia);
+        });
+        /* $("#kill2").click(function(){
+            let pos=$("#pos").val();
+            pos="#"+pos;
+            $(pos).remove();
+        }); */
+    </script>
+</body>
+</html>

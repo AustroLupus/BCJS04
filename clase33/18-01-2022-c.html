@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dom</title>
+</head>
+<body>
+	<p>parrafo 1
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</p>
+
+	<p>parrafo 2
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</p>
+	<p>parrafo 3
+		<a href="#">link</a>
+		<a href="#">link</a>
+	</p>
+
+	<script type="text/javascript">
+		let parrafos=document.getElementsByTagName("p");
+		alert("cantidad de parrafos: "+parrafos.length);
+		for (var i = 0; i < parrafos.length; i++) {
+			console.log(parrafos[i]);
+			console.log("===========================");
+			let ele=parrafos[i];
+			let cant=ele.getElementsByTagName("a");
+			console.log(cant.length);
+		}
+
+	</script>
+</body>
+</html>

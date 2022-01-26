@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atributos</title>
+</head>
+<body>
+    <button id="uno">cambio de manera uno a uno</button><br>
+    <button id="todos">cambio de manera todos juntos</button><br>
+    <button id="kill">eliminar atributo title</button><br>
+    <img src="./foto01.png" name="foto" id="f01" title="foto libro">
+    <script type="text/javascript">
+        $("#uno").click(function(){
+            $("#f01").attr("src","./foto02.png");
+            $("#f01").attr("name","imagen");
+            $("#f01").attr("title","la otra foto");
+        });
+        $("#todos").click(function(){
+            $("#f01").attr({"src":"./foto03.png","name":"libro viejo","title":"ye olde switcharoo"});
+        });
+        $("#kill").click(function(){
+            $("#f01").removeAttr("title");
+        });
+    </script>
+</body>
+</html>

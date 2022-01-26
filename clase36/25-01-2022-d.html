@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>lista de productos</h1>
+    <ul id="star-trek">
+        <li id="1">Yoda</li>
+        <li id="2">Chewbacca</li>
+        <li id="3">Anakin Skywalker</li>
+        <li id="4">Obi-Wan Kenobi</li>
+        <li id="5">Luke Skywalker</li>
+        <li id="6">Han Solo</li>
+        <li id="7">Leia Skywalker</li>
+        <li id="8">Kylo Ren</li>
+        <li id="9">Darth Sidious</li>
+        <li id="10">Landonis Balthazar Calrissian</li>
+    </ul>
+    Agregar elemento: <input type="text" id="adicionado" name="adicionado"> <input type="button" id="btn" name="btn" value="agregar">
+
+    <script type="text/javascript">
+        let num=10;
+        $("#btn").click(function(){
+            let nuevo=$("#adicionado").val();
+            num++
+            $("#star-trek").append("<li id="+num+">"+nuevo+"</li>");
+        });
+    </script>
+</body>
+<!-- usando las herrramientas de jQuery para manipular DOM
+    implementar una funcionalidad para agregar elementos a la lista
+-->
+</html>

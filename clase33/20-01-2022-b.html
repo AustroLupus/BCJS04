@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="crear_id();">crear con ID</button><br>
+    Ingrese id: <
+    <button onclick="crear2();">crear 2</button><br>
+    <p id="e"></p>
+    <script type="text/javascript">
+        let id=1;
+        function crear(){
+            
+            let elemento=document.createElement("p");
+            let cont=document.createTextNode("Hola Mundo");
+            elemento.appendChild(cont);
+            document.body.appendChild(elemento);
+        }
+        function crear_id(){
+            let elemento=document.createElement("p");
+            elemento.setAttribute("id",id);
+            id++;
+            let cont=document.createTextNode("Hola Mundo");
+            elemento.appendChild(cont);
+            document.body.appendChild(elemento);
+        }
+        function crear2(){
+            document.getElementById("e").innerHTML="Hola Mundo"
+        }
+    </script>
+
+</body>
+</html>

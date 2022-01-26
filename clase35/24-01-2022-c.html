@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="b1" id="b1" value="HACER CLICK AQUI">
+    <script type="text/javascript">
+        function holamundo(event){
+            let evento=window.event || event;
+            console.log(evento);
+            console.log(evento.altKey);
+            alert("Hola mundo");
+        }
+        let boton=document.getElementById('b1');
+        boton.addEventListener('click',holamundo,false);
+    </script>
+</body>
+</html>
