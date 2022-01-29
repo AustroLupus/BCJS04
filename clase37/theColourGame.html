@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Carlos Horta">
+    <meta name="description" content="Juego de adivinar el color en base al codigo RBG enunciado en el titulo de la pagina. Creado en HTML, CSS y JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/style.css" rel="stylesheet">
+    <title>El Juego de los Colores</title>
+</head>
+<body>
+    <h1>The Great <span id="colorDisplay"></span> Guessing Game</h1>
+    <div id="stripe">
+        <button id="reset">Nuevos Colores</button>
+        <span id="message"></span>
+        <button id="easy">Easy</button>
+        <button class="selected" id="hard">Hard</button>
+    </div>
+    <div class="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>
