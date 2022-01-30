@@ -1,5 +1,6 @@
 body{
    background-color: #232323;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .square{
    float: left;
@@ -8,24 +9,45 @@ body{
    padding-bottom: 30%;
    background: midnightblue;
    margin: 1.5%;
+   border-radius: 15px;
+   transition: 200ms;
 }
 .container{
    max-width: 600px;
    margin: 0 auto;
 }
 h1{
+   padding: 2%;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   text-align: center;
+   font-size: 32px;
    color: white;
 }
 #message{
-   color: white
-   ;
+   display: inline-block;
+   width: 20%;
+   font-weight: bold;
+   font-size: larger;
 }
 #stripe{
-   color:white;
+   background-color: white;
    height: 30px;
    text-align: center;
 }
 .selected{
-   background-color: tomato;
+   background-color: #232323;
    color: white;
+}
+button{
+   outline-style: none;
+   border: none;
+   background-color: inherit;
+   font-weight: bold;
+   font-size: larger;
+   height: 30px;
+}
+#colorDisplay{
+   display: block;
+   font-size: 64px;
 }
